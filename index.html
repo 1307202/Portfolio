@@ -84,31 +84,45 @@
       </a>
 
       <!-- Desktop Menu -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-dracula-muted">
-        <a href="#sobre" class="hover:text-dracula-cyan transition-colors">Sobre</a>
-        <a href="#projetos" class="hover:text-dracula-cyan transition-colors">Projetos</a>
-        <a href="#experiencia" class="hover:text-dracula-cyan transition-colors">Experiência</a>
-        <a href="#stack" class="hover:text-dracula-cyan transition-colors">Stack & Skills</a>
-        <a href="#contato" class="px-4 py-2 rounded-xl bg-dracula-purple/15 text-dracula-purple border border-dracula-purple/40 hover:bg-dracula-purple hover:text-dracula-bg font-semibold transition-all">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-dracula-muted">
+        <a href="#sobre" data-i18n="nav_about" class="hover:text-dracula-cyan transition-colors">Sobre</a>
+        <a href="#projetos" data-i18n="nav_projects" class="hover:text-dracula-cyan transition-colors">Projetos</a>
+        <a href="#experiencia" data-i18n="nav_experience" class="hover:text-dracula-cyan transition-colors">Experiência</a>
+        <a href="#stack" data-i18n="nav_stack" class="hover:text-dracula-cyan transition-colors">Stack & Skills</a>
+        
+        <!-- Language Toggle Desktop -->
+        <button id="lang-toggle-desktop" type="button" onclick="toggleLanguage()" aria-label="Alternar idioma / Switch language" class="px-3 py-1.5 rounded-xl bg-dracula-card border border-dracula-border hover:border-dracula-cyan text-xs font-mono font-semibold text-dracula-fg flex items-center gap-1.5 transition-all">
+          <svg class="w-4 h-4 text-dracula-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          <span id="lang-label-desktop"><span class="text-dracula-green">PT</span> <span class="text-dracula-border">|</span> <span class="text-dracula-muted">EN</span></span>
+        </button>
+
+        <a href="#contato" data-i18n="nav_contact" class="px-4 py-2 rounded-xl bg-dracula-purple/15 text-dracula-purple border border-dracula-purple/40 hover:bg-dracula-purple hover:text-dracula-bg font-semibold transition-all">
           Contato
         </a>
       </nav>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" aria-label="Abrir menu" class="md:hidden p-2.5 rounded-xl bg-dracula-card border border-dracula-border text-dracula-fg hover:border-dracula-purple transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <!-- Mobile Controls (Language + Menu Button) -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="lang-toggle-mobile" type="button" onclick="toggleLanguage()" aria-label="Alternar idioma / Switch language" class="px-2.5 py-2 rounded-xl bg-dracula-card border border-dracula-border hover:border-dracula-cyan text-xs font-mono font-semibold text-dracula-fg flex items-center gap-1 transition-all">
+          <svg class="w-3.5 h-3.5 text-dracula-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          <span id="lang-label-mobile"><span class="text-dracula-green">PT</span>|<span class="text-dracula-muted">EN</span></span>
+        </button>
+
+        <button id="mobile-menu-btn" aria-label="Abrir menu" class="p-2.5 rounded-xl bg-dracula-card border border-dracula-border text-dracula-fg hover:border-dracula-purple transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu" class="hidden md:hidden bg-dracula-surface border-b border-dracula-border px-4 pt-3 pb-5 space-y-2">
-      <a href="#sobre" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Sobre</a>
-      <a href="#projetos" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Projetos</a>
-      <a href="#experiencia" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Experiência</a>
-      <a href="#stack" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Stack & Skills</a>
-      <a href="#contato" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-semibold text-dracula-purple bg-dracula-purple/10 border border-dracula-purple/30">Entrar em Contato</a>
+      <a href="#sobre" data-i18n="nav_about" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Sobre</a>
+      <a href="#projetos" data-i18n="nav_projects" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Projetos</a>
+      <a href="#experiencia" data-i18n="nav_experience" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Experiência</a>
+      <a href="#stack" data-i18n="nav_stack" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-dracula-fg hover:bg-dracula-card">Stack & Skills</a>
+      <a href="#contato" data-i18n="nav_contact_cta" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-semibold text-dracula-purple bg-dracula-purple/10 border border-dracula-purple/30">Entrar em Contato</a>
     </div>
   </header>
 
@@ -122,39 +136,39 @@
         <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-dracula-card/90 border border-dracula-border text-xs sm:text-sm font-mono text-dracula-green">
             <span class="w-2 h-2 rounded-full bg-dracula-green animate-ping"></span>
-            <span>Disponível para projetos & oportunidades em TI • Goiânia, GO</span>
+            <span data-i18n="hero_badge">Disponível para projetos & oportunidades em TI • Goiânia, GO</span>
           </div>
 
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-            Olá, eu sou <br class="hidden sm:block" />
+            <span data-i18n="hero_greeting">Olá, eu sou</span> <br class="hidden sm:block" />
             <span class="bg-gradient-to-r from-dracula-purple via-dracula-cyan to-dracula-green bg-clip-text text-transparent">
               Eduardo Reis
             </span>
           </h1>
 
-          <p class="text-lg sm:text-xl font-mono text-dracula-cyan font-medium">
+          <p data-i18n="hero_role" class="text-lg sm:text-xl font-mono text-dracula-cyan font-medium">
             Auxiliar de TI & Developer System | Automação (RPA & IA) | TOTVS Protheus
           </p>
 
-          <p class="text-dracula-muted text-base sm:text-lg leading-relaxed max-w-2xl">
+          <p data-i18n-html="hero_desc" class="text-dracula-muted text-base sm:text-lg leading-relaxed max-w-2xl">
             Transformo processos operacionais pesados em fluxos inteligentes e automatizados. Uno experiência prática em <strong class="text-dracula-fg font-semibold">infraestrutura de TI, ERP TOTVS Protheus</strong> e desenvolvimento de <strong class="text-dracula-fg font-semibold">automações com Python, RPA e Agentes de IA</strong> para gerar eficiência real.
           </p>
 
           <!-- CTAs -->
           <div class="flex flex-wrap items-center gap-3.5 pt-2">
             <a href="#projetos" class="px-6 py-3.5 rounded-xl bg-dracula-purple text-dracula-bg font-bold text-sm sm:text-base hover:bg-dracula-purple/90 transition-all glow-purple flex items-center gap-2">
-              <span>Explorar Projetos</span>
+              <span data-i18n="hero_btn_projects">Explorar Projetos</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </a>
 
-            <a href="https://wa.me/5562996223286?text=Ol%C3%A1%20Eduardo!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-dracula-card border border-dracula-green/50 text-dracula-green font-semibold text-sm sm:text-base hover:bg-dracula-green hover:text-dracula-bg transition-all flex items-center gap-2">
+            <a id="whatsapp-hero-btn" href="https://wa.me/5562996223286?text=Ol%C3%A1%20Eduardo!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-dracula-card border border-dracula-green/50 text-dracula-green font-semibold text-sm sm:text-base hover:bg-dracula-green hover:text-dracula-bg transition-all flex items-center gap-2">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
               <span>WhatsApp</span>
             </a>
 
-            <button onclick="copyText('eduardohfr96@gmail.com', 'E-mail copiado: eduardohfr96@gmail.com')" class="px-4 py-3.5 rounded-xl bg-dracula-surface border border-dracula-border text-dracula-fg hover:border-dracula-cyan text-sm font-mono transition-colors flex items-center gap-2" title="Copiar e-mail">
+            <button onclick="copyEmail()" class="px-4 py-3.5 rounded-xl bg-dracula-surface border border-dracula-border text-dracula-fg hover:border-dracula-cyan text-sm font-mono transition-colors flex items-center gap-2" title="Copiar e-mail / Copy email">
               <svg class="w-4 h-4 text-dracula-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-              <span>Copiar E-mail</span>
+              <span data-i18n="hero_btn_copy">Copiar E-mail</span>
             </button>
           </div>
 
@@ -188,14 +202,14 @@
             <!-- Terminal Body -->
             <div class="p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
               <p class="text-dracula-muted mb-2">$ cat developer_profile.json</p>
-              <pre class="text-dracula-fg"><code>{
+              <pre id="terminal-json" class="text-dracula-fg"><code>{
   <span class="text-dracula-cyan">"nome"</span>: <span class="text-dracula-green">"Eduardo Henrique F. dos Reis"</span>,
   <span class="text-dracula-cyan">"localizacao"</span>: <span class="text-dracula-green">"Goiânia, GO - Brasil"</span>,
   <span class="text-dracula-cyan">"foco_principal"</span>: [
     <span class="text-dracula-orange">"Automação de Processos (RPA & IA)"</span>,
     <span class="text-dracula-orange">"Suporte & Infraestrutura de TI"</span>,
     <span class="text-dracula-orange">"ERP TOTVS Protheus (SIGACOM/SIGAFIN)"</span>,
-    <span class="text-dracula-orange">"Desenvolvimento Web Full Stack"</span>
+    <span class="text-dracula-orange">"Desenvolvimento Web & WordPress"</span>
   ],
   <span class="text-dracula-cyan">"stack"</span>: [<span class="text-dracula-pink">"Python"</span>, <span class="text-dracula-pink">"JS"</span>, <span class="text-dracula-pink">"n8n"</span>, <span class="text-dracula-pink">"Botpress"</span>, <span class="text-dracula-pink">"APIs REST"</span>],
   <span class="text-dracula-cyan">"formacao"</span>: <span class="text-dracula-green">"Sistemas de Informação (UNIFASAM)"</span>,
@@ -218,18 +232,18 @@
       <div class="lg:col-span-7 space-y-5">
         <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-dracula-purple">
           <span>01.</span>
-          <span>Sobre Mim</span>
+          <span data-i18n="about_eyebrow">Sobre Mim</span>
         </div>
-        <h2 class="text-2xl sm:text-4xl font-bold tracking-tight">
+        <h2 data-i18n-html="about_title" class="text-2xl sm:text-4xl font-bold tracking-tight">
           Visão de negócios aliada à <span class="text-dracula-cyan">engenharia de automação</span>
         </h2>
-        <p class="text-dracula-muted leading-relaxed text-base">
+        <p data-i18n-html="about_p1" class="text-dracula-muted leading-relaxed text-base">
           Sou profissional de Tecnologia da Informação em Goiânia, com atuação voltada para <strong class="text-dracula-fg">suporte técnico, infraestrutura, automação de processos (RPA) e aplicação prática de Inteligência Artificial</strong> para ganho de produtividade.
         </p>
-        <p class="text-dracula-muted leading-relaxed text-base">
-          Meu diferencial está em unir a base técnica de desenvolvimento (<strong class="text-dracula-fg">Python, JavaScript, Java, APIs REST</strong>) com anos de vivência real em rotinas corporativas críticas dentro do <strong class="text-dracula-fg">ERP TOTVS Protheus (módulos SIGACOM e SIGAFIN)</strong>. Entendo o gargalo operacional na ponta e construo a solução técnica exata para eliminá-lo.
+        <p data-i18n-html="about_p2" class="text-dracula-muted leading-relaxed text-base">
+          Meu diferencial está em unir a base técnica de desenvolvimento (<strong class="text-dracula-fg">Python, JavaScript, Java, APIs REST e WordPress</strong>) com anos de vivência real em rotinas corporativas críticas dentro do <strong class="text-dracula-fg">ERP TOTVS Protheus (módulos SIGACOM e SIGAFIN)</strong>. Entendo o gargalo operacional na ponta e construo a solução técnica exata para eliminá-lo.
         </p>
-        <p class="text-dracula-muted leading-relaxed text-base">
+        <p data-i18n-html="about_p3" class="text-dracula-muted leading-relaxed text-base">
           Atualmente curso <strong class="text-dracula-fg">Bacharelado em Sistemas de Informação (UNIFASAM)</strong> e especialização em <strong class="text-dracula-fg">Desenvolvimento Full Stack</strong>, mantendo inglês em nível avançado.
         </p>
       </div>
@@ -241,9 +255,9 @@
             <div class="p-2.5 rounded-xl bg-dracula-purple/15 text-dracula-purple">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
-            <h3 class="font-bold text-dracula-fg">Automação & Agentes de IA</h3>
+            <h3 data-i18n="about_card1_title" class="font-bold text-dracula-fg">Automação & Agentes de IA</h3>
           </div>
-          <p class="text-sm text-dracula-muted">Criação de fluxos RPA, chatbots inteligentes (Botpress / WhatsApp API) e scripts Python que reduzem horas de trabalho repetitivo.</p>
+          <p data-i18n="about_card1_desc" class="text-sm text-dracula-muted">Criação de fluxos RPA, chatbots inteligentes (Botpress / WhatsApp API) e scripts Python que reduzem horas de trabalho repetitivo.</p>
         </div>
 
         <div class="p-5 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-cyan/60 transition-colors">
@@ -251,9 +265,9 @@
             <div class="p-2.5 rounded-xl bg-dracula-cyan/15 text-dracula-cyan">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
             </div>
-            <h3 class="font-bold text-dracula-fg">Infraestrutura & Suporte TI</h3>
+            <h3 data-i18n="about_card2_title" class="font-bold text-dracula-fg">Infraestrutura & Suporte TI</h3>
           </div>
-          <p class="text-sm text-dracula-muted">Administração de estações de trabalho, redes, implantação Microsoft Office, manutenção preventiva/corretiva e suporte ágil aos usuários.</p>
+          <p data-i18n="about_card2_desc" class="text-sm text-dracula-muted">Administração de estações de trabalho, redes, implantação Microsoft Office, manutenção preventiva/corretiva e suporte ágil aos usuários.</p>
         </div>
 
         <div class="p-5 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-green/60 transition-colors sm:col-span-2 lg:col-span-1">
@@ -261,9 +275,9 @@
             <div class="p-2.5 rounded-xl bg-dracula-green/15 text-dracula-green">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
             </div>
-            <h3 class="font-bold text-dracula-fg">TOTVS Protheus & Dados</h3>
+            <h3 data-i18n="about_card3_title" class="font-bold text-dracula-fg">TOTVS Protheus & Dados</h3>
           </div>
-          <p class="text-sm text-dracula-muted">Domínio de Compras (SIGACOM), Financeiro (SIGAFIN), validação fiscal e dashboards gerenciais automatizados com Python e openpyxl.</p>
+          <p data-i18n="about_card3_desc" class="text-sm text-dracula-muted">Domínio de Compras (SIGACOM), Financeiro (SIGAFIN), validação fiscal e dashboards gerenciais automatizados com Python e openpyxl.</p>
         </div>
       </div>
     </div>
@@ -276,15 +290,380 @@
         <div>
           <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-dracula-green mb-2">
             <span>02.</span>
-            <span>Portfólio & Soluções</span>
+            <span data-i18n="projects_eyebrow">Portfólio & Soluções</span>
           </div>
-          <h2 class="text-2xl sm:text-4xl font-bold tracking-tight">Projetos em Destaque</h2>
+          <h2 data-i18n="projects_title" class="text-2xl sm:text-4xl font-bold tracking-tight">Projetos em Destaque</h2>
         </div>
 
         <!-- Filter Buttons -->
         <div id="project-filters" class="flex flex-wrap gap-2">
-          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-dracula-purple text-dracula-bg transition-all">
+          <button data-filter="all" data-i18n="filter_all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-dracula-purple text-dracula-bg transition-all">
             Todos
+          </button>
+          <button data-filter="ia" data-i18n="filter_ia" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium bg-dracula-card text-dracula-muted border border-dracula-border hover:border-dracula-purple hover:text-dracula-fg transition-all">
+            Automação & IA
+          </button>
+          <button data-filter="web" data-i18n="filter_web" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium bg-dracula-card text-dracula-muted border border-dracula-border hover:border-dracula-cyan hover:text-dracula-fg transition-all">
+            Web & Full Stack
+          </button>
+          <button data-filter="dados" data-i18n="filter_dados" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium bg-dracula-card text-dracula-muted border border-dracula-border hover:border-dracula-green hover:text-dracula-fg transition-all">
+            Dados & ERP
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Projeto 1: Jorge (CobraAPI) -->
+        <article data-category="ia" class="project-card group rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-purple p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span data-i18n="proj_cat_ia" class="px-3 py-1 rounded-lg bg-dracula-purple/15 text-dracula-purple font-mono text-xs font-semibold">
+                Automação & IA
+              </span>
+              <a href="https://github.com/1307202" target="_blank" rel="noopener noreferrer" class="text-dracula-muted hover:text-dracula-fg transition-colors" aria-label="Ver no GitHub">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+            </div>
+            <h3 data-i18n="proj1_title" class="text-xl font-bold text-dracula-fg group-hover:text-dracula-purple transition-colors mb-2.5">
+              Jorge (CobraAPI) — Agente de Cobrança & Atendimento
+            </h3>
+            <p data-i18n="proj1_desc" class="text-sm sm:text-base text-dracula-muted leading-relaxed mb-5">
+              Agente conversacional inteligente desenvolvido com Botpress e integrado diretamente à Meta WhatsApp Cloud API para disparo automatizado de lembretes de vencimento, negociação inicial e atendimento 24/7 com versionamento em GitHub.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-dracula-border/60">
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-cyan font-mono text-xs">Botpress</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-cyan font-mono text-xs">WhatsApp Cloud API</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-cyan font-mono text-xs">APIs REST</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-cyan font-mono text-xs">GitHub</span>
+          </div>
+        </article>
+
+        <!-- Projeto 2: Reis Shoes -->
+        <article data-category="web" class="project-card group rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-cyan p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span data-i18n="proj_cat_web" class="px-3 py-1 rounded-lg bg-dracula-cyan/15 text-dracula-cyan font-mono text-xs font-semibold">
+                Web & Full Stack
+              </span>
+              <a href="https://github.com/1307202" target="_blank" rel="noopener noreferrer" class="text-dracula-muted hover:text-dracula-fg transition-colors" aria-label="Ver no GitHub">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            <h3 data-i18n="proj2_title" class="text-xl font-bold text-dracula-fg group-hover:text-dracula-cyan transition-colors mb-2.5">
+              Reis Shoes — Plataforma Web & Companion App
+            </h3>
+            <p data-i18n="proj2_desc" class="text-sm sm:text-base text-dracula-muted leading-relaxed mb-5">
+              Ecossistema web completo criado para lavanderia e restauração premium de tênis em Goiânia. Combina vitrine digital de conversão, agendamento de coleta/entrega e acompanhamento do status de higienização dos calçados.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-dracula-border/60">
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-purple font-mono text-xs">React / Lovable</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-purple font-mono text-xs">JavaScript</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-purple font-mono text-xs">Tailwind CSS</span>
+            <span data-i18n="tag_ux" class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-purple font-mono text-xs">UX/UI Responsivo</span>
+          </div>
+        </article>
+
+        <!-- Projeto 3: Automações RPA & Agentes de IA -->
+        <article data-category="ia" class="project-card group rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-purple p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span data-i18n="proj_cat_ia" class="px-3 py-1 rounded-lg bg-dracula-purple/15 text-dracula-purple font-mono text-xs font-semibold">
+                Automação & IA
+              </span>
+              <span data-i18n="proj_status_prod" class="font-mono text-xs text-dracula-green">Produção</span>
+            </div>
+            <h3 data-i18n="proj3_title" class="text-xl font-bold text-dracula-fg group-hover:text-dracula-purple transition-colors mb-2.5">
+              Automações RPA & Orquestração de Agentes de IA
+            </h3>
+            <p data-i18n="proj3_desc" class="text-sm sm:text-base text-dracula-muted leading-relaxed mb-5">
+              Pipeline de automação de rotinas operacionais e administrativas conectando scripts Python, webhooks, n8n e modelos de IA via APIs REST — eliminando digitação manual e acelerando triagem de documentos.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-dracula-border/60">
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-green font-mono text-xs">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-green font-mono text-xs">n8n</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-green font-mono text-xs">RPA</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-green font-mono text-xs">LLMs & APIs REST</span>
+          </div>
+        </article>
+
+        <!-- Projeto 4: Dashboards Gerenciais & Automação de Dados -->
+        <article data-category="dados" class="project-card group rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-green p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span data-i18n="proj_cat_dados" class="px-3 py-1 rounded-lg bg-dracula-green/15 text-dracula-green font-mono text-xs font-semibold">
+                Dados & ERP
+              </span>
+              <span class="font-mono text-xs text-dracula-muted">BI & Python</span>
+            </div>
+            <h3 data-i18n="proj4_title" class="text-xl font-bold text-dracula-fg group-hover:text-dracula-green transition-colors mb-2.5">
+              Dashboards Gerenciais & Automação de Dados (ERP)
+            </h3>
+            <p data-i18n="proj4_desc" class="text-sm sm:text-base text-dracula-muted leading-relaxed mb-5">
+              Painéis executivos de KPIs de compras, suprimentos e financeiro alimentados por scripts automatizados em Python e openpyxl, consolidando relatórios extraídos do TOTVS Protheus sem retrabalho manual.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-dracula-border/60">
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-orange font-mono text-xs">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-orange font-mono text-xs">openpyxl</span>
+            <span data-i18n="tag_excel" class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-orange font-mono text-xs">Excel Avançado</span>
+            <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-orange font-mono text-xs">TOTVS Protheus</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiência Profissional & Formação -->
+  <section id="experiencia" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Timeline de Experiência -->
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-dracula-cyan mb-2">
+          <span>03.</span>
+          <span data-i18n="exp_eyebrow">Trajetória</span>
+        </div>
+        <h2 data-i18n="exp_title" class="text-2xl sm:text-3xl font-bold tracking-tight mb-8">Experiência Profissional</h2>
+
+        <div class="relative border-l-2 border-dracula-border ml-3 space-y-8">
+          
+          <!-- Exp Atual: Freelancer -->
+          <div class="relative pl-7">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dracula-green ring-4 ring-dracula-bg"></span>
+            <div class="p-5 sm:p-6 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-green/50 transition-colors">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 data-i18n="exp0_role" class="text-lg font-bold text-dracula-fg">Freelancer — Consultor de TI, Automação (RPA & IA) & Developer System</h3>
+                <span data-i18n="exp0_date" class="px-2.5 py-0.5 rounded-full bg-dracula-green/15 text-dracula-green font-mono text-xs font-semibold">
+                  2026 – Atual
+                </span>
+              </div>
+              <p data-i18n="exp0_company" class="text-sm font-medium text-dracula-cyan mb-3">Atuação Independente / ERRPA • Goiânia, GO</p>
+              <ul class="space-y-2 text-sm text-dracula-muted list-disc list-inside">
+                <li data-i18n="exp0_li1">Desenvolvimento de automações de processos sob demanda (RPA, Python e n8n) para eliminação de tarefas manuais e ganho de escala.</li>
+                <li data-i18n="exp0_li2">Criação e integração de agentes de IA e chatbots via APIs REST (Botpress e Meta WhatsApp Cloud API).</li>
+                <li data-i18n="exp0_li3">Criação, personalização e manutenção de sites profissionais, institucionais e landing pages em WordPress, além de aplicações web responsivas.</li>
+                <li data-i18n="exp0_li4">Consultoria técnica, suporte de infraestrutura e otimização de fluxos administrativos e de ERP.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 pt-4 mt-4 border-t border-dracula-border/60">
+                <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-green font-mono text-xs">RPA & Python</span>
+                <span data-i18n="tag_ai_agents" class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-purple font-mono text-xs">Agentes de IA</span>
+                <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-cyan font-mono text-xs">Botpress</span>
+                <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-cyan font-mono text-xs">WordPress</span>
+                <span class="px-2.5 py-1 rounded-md bg-dracula-surface text-dracula-orange font-mono text-xs">APIs REST</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exp 1: Hidasi Aires e Andrade Advogados -->
+          <div class="relative pl-7">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dracula-cyan ring-4 ring-dracula-bg"></span>
+            <div class="p-5 sm:p-6 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-cyan/50 transition-colors">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 data-i18n="exp1_role" class="text-lg font-bold text-dracula-fg">Auxiliar de TI & Developer System</h3>
+                <span data-i18n="exp1_date" class="px-2.5 py-0.5 rounded-full bg-dracula-cyan/15 text-dracula-cyan font-mono text-xs font-semibold">
+                  Maio/2026 – Maio/2026
+                </span>
+              </div>
+              <p class="text-sm font-medium text-dracula-cyan mb-3">Hidasi Aires e Andrade Advogados • Goiânia, GO</p>
+              <ul class="space-y-2 text-sm text-dracula-muted list-disc list-inside">
+                <li data-i18n="exp1_li1">Desenvolvimento de automações de rotinas operacionais com RPA e IA, reduzindo atividades manuais da equipe.</li>
+                <li data-i18n="exp1_li2">Suporte técnico à infraestrutura de TI, administração de estações de trabalho e redes.</li>
+                <li data-i18n="exp1_li3">Implantação, configuração e suporte avançado ao pacote Microsoft Office e ferramentas jurídicas.</li>
+                <li data-i18n="exp1_li4">Formatação, manutenção preventiva/corretiva de hardware e resolução de incidentes de software.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Exp 2 -->
+          <div class="relative pl-7">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dracula-purple ring-4 ring-dracula-bg"></span>
+            <div class="p-5 sm:p-6 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-purple/50 transition-colors">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 data-i18n="exp2_role" class="text-lg font-bold text-dracula-fg">Comprador Sênior / Supervisor de Compras</h3>
+                <span data-i18n="exp2_date" class="px-2.5 py-0.5 rounded-full bg-dracula-purple/15 text-dracula-purple font-mono text-xs font-semibold">
+                  Março/2023 – Maio/2026
+                </span>
+              </div>
+              <p class="text-sm font-medium text-dracula-cyan mb-3">São Miguel Incorporações e Participações • Goiânia, GO</p>
+              <ul class="space-y-2 text-sm text-dracula-muted list-disc list-inside">
+                <li data-i18n="exp2_li1">Amplo domínio do ERP TOTVS Protheus, atuando de forma integrada nos módulos de Compras (SIGACOM) e Financeiro (SIGAFIN).</li>
+                <li data-i18n="exp2_li2">Lançamento, monitoramento e validação fiscal de notas fiscais (monitor de NF-e), contas a pagar e a receber.</li>
+                <li data-i18n="exp2_li3">Criação de formulários e relatórios gerenciais para controle de suprimentos, peças e logística de entrega.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Exp 3 -->
+          <div class="relative pl-7">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dracula-muted ring-4 ring-dracula-bg"></span>
+            <div class="p-5 sm:p-6 rounded-2xl bg-dracula-card border border-dracula-border">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 data-i18n="exp3_role" class="text-lg font-bold text-dracula-fg">Recepcionista & Suporte Administrativo</h3>
+                <span data-i18n="exp3_date" class="px-2.5 py-0.5 rounded-full bg-dracula-surface text-dracula-muted font-mono text-xs">
+                  Agosto/2021 – Agosto/2022
+                </span>
+              </div>
+              <p class="text-sm font-medium text-dracula-cyan mb-2">Centro Médico Fillium • Goiânia, GO</p>
+              <p data-i18n="exp3_desc" class="text-sm text-dracula-muted">
+                Atendimento ao público, organização de agendas, triagem de demandas e suporte às rotinas administrativas e sistemas internos.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Formação Acadêmica & Certificações -->
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-dracula-purple mb-2">
+            <span>04.</span>
+            <span data-i18n="edu_eyebrow">Educação</span>
+          </div>
+          <h2 data-i18n="edu_title" class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Formação & Idiomas</h2>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl bg-dracula-card border border-dracula-border">
+            <div class="flex items-center justify-between mb-1">
+              <span data-i18n="edu1_badge" class="font-mono text-xs text-dracula-green bg-dracula-green/10 px-2.5 py-0.5 rounded-md">Graduação • Cursando</span>
+            </div>
+            <h3 data-i18n="edu1_title" class="text-base font-bold text-dracula-fg mt-2">Bacharelado em Sistemas de Informação</h3>
+            <p class="text-sm text-dracula-muted mt-1">UNIFASAM – Centro Universitário Sul-Americano</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-dracula-card border border-dracula-border">
+            <div class="flex items-center justify-between mb-1">
+              <span data-i18n="edu2_badge" class="font-mono text-xs text-dracula-purple bg-dracula-purple/10 px-2.5 py-0.5 rounded-md">Especialização • Cursando</span>
+            </div>
+            <h3 data-i18n="edu2_title" class="text-base font-bold text-dracula-fg mt-2">Formação Desenvolvedor Full Stack</h3>
+            <p data-i18n="edu2_desc" class="text-sm text-dracula-muted mt-1">Desenvolvimento Front-end, Back-end, APIs REST e Bancos de Dados</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-dracula-card border border-dracula-border">
+            <div class="flex items-center justify-between mb-1">
+              <span data-i18n="edu3_badge" class="font-mono text-xs text-dracula-cyan bg-dracula-cyan/10 px-2.5 py-0.5 rounded-md">Idiomas • Avançado</span>
+            </div>
+            <h3 data-i18n="edu3_title" class="text-base font-bold text-dracula-fg mt-2">Inglês — YouBecome Idiomas</h3>
+            <p data-i18n="edu3_desc" class="text-sm text-dracula-muted mt-1">Leitura técnica de documentações, comunicação e conversação avançada (Português Nativo)</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stack & Competências Técnicas -->
+  <section id="stack" class="py-16 sm:py-24 bg-dracula-surface/50 border-y border-dracula-border/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-dracula-purple mb-2">
+          <span>05.</span>
+          <span data-i18n="stack_eyebrow">Arsenal Técnico</span>
+        </div>
+        <h2 data-i18n="stack_title" class="text-2xl sm:text-4xl font-bold tracking-tight">Stack & Competências</h2>
+        <p data-i18n="stack_desc" class="text-dracula-muted text-sm sm:text-base mt-3">
+          Ferramentas e tecnologias que utilizo no dia a dia para automatizar processos, dar suporte à infraestrutura e desenvolver aplicações.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Automação & IA -->
+        <div class="p-6 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-purple/60 transition-all">
+          <div class="w-11 h-11 rounded-xl bg-dracula-purple/15 text-dracula-purple flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 data-i18n="stack_card1_title" class="text-lg font-bold text-dracula-fg mb-4">Automação & IA</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">RPA</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Botpress</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">n8n</span>
+            <span data-i18n="tag_ai_agents" class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Agentes de IA</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">APIs REST</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Meta Business Suite</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Desenvolvimento -->
+        <div class="p-6 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-cyan/60 transition-all">
+          <div class="w-11 h-11 rounded-xl bg-dracula-cyan/15 text-dracula-cyan flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 data-i18n="stack_card2_title" class="text-lg font-bold text-dracula-fg mb-4">Desenvolvimento</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Python</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Java</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">React</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">WordPress</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">HTML5 / CSS3</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">SQL</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Git & GitHub</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">openpyxl</span>
+          </div>
+        </div>
+
+        <!-- Card 3: ERP & Infraestrutura -->
+        <div class="p-6 rounded-2xl bg-dracula-card border border-dracula-border hover:border-dracula-green/60 transition-all">
+          <div class="w-11 h-11 rounded-xl bg-dracula-green/15 text-dracula-green flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+          </div>
+          <h3 data-i18n="stack_card3_title" class="text-lg font-bold text-dracula-fg mb-4">ERP & Infraestrutura</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">TOTVS Protheus</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">SIGACOM & SIGAFIN</span>
+            <span data-i18n="tag_support" class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Suporte Técnico N1/N2</span>
+            <span data-i18n="tag_infra" class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Infraestrutura TI</span>
+            <span class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Windows / Linux</span>
+            <span data-i18n="tag_office" class="px-3 py-1.5 rounded-xl bg-dracula-surface border border-dracula-border text-xs font-mono text-dracula-fg">Excel & Office Avançado</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="rounded-3xl bg-gradient-to-br from-dracula-card via-dracula-card to-dracula-surface border border-dracula-border p-8 sm:p-12 relative overflow-hidden">
+      <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-dracula-purple/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 -bottom-20 w-72 h-72 rounded-full bg-dracula-green/10 blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <span data-i18n="contact_eyebrow" class="font-mono text-xs uppercase tracking-wider text-dracula-green">06. Vamos conversar</span>
+          <h2 data-i18n="contact_title" class="text-2xl sm:text-4xl font-bold tracking-tight">
+            Pronto para automatizar processos ou somar no seu time de TI?
+          </h2>
+          <p data-i18n="contact_desc" class="text-dracula-muted text-base max-w-xl">
+            Estou aberto a oportunidades como Auxiliar de TI, Developer System, Especialista em Automação/RPA, Consultor TOTVS Protheus e projetos sob medida.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col gap-3.5">
+          <!-- WhatsApp Direct -->
+          <a id="whatsapp-contact-btn" href="https://wa.me/5562996223286?text=Ol%C3%A1%20Eduardo!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="w-full px-5 py-4 rounded-2xl bg-dracula-green text-dracula-bg font-bold text-sm sm:text-base hover:bg-dracula-green/90 transition-all flex items-center justify-between glow-green">
+            <span class="flex items-center gap-3">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+              <span data-i18n="contact_whatsapp">Chamar no WhatsApp</span>
+            </span>
+            <span class="font-mono text-xs">(62) 99622-3286 →</span>
+          </a>
+
+          <!-- Copy Email -->
+          <button onclick="copyEmail()" class="w-full px-5 py-4 rounded-2xl bg-dracula-surface border border-dracula-border hover:border-dracula-purple text-dracula-fg font-medium text-sm sm:text-base transition-all flex items-center justify-between">
+            <span class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-dracula-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span class="font-mono text-xs sm:text-sm truncate">eduardohfr96@gmail.com</span>
+            </span>
+            <span data-i18n="contact_copy" class="font-mono text-xs text-dracula-purple">Copiar</span>
           </button>
           <button data-filter="ia" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium bg-dracula-card text-dracula-muted border border-dracula-border hover:border-dracula-purple hover:text-dracula-fg transition-all">
             Automação & IA
@@ -721,7 +1100,286 @@
 
     // Copy to Clipboard with Fallback & Toast
     let toastTimeout;
+    let currentLang = 'pt';
+
+    const translations = {
+      pt: {
+        page_title: 'Eduardo Reis | Auxiliar de TI & Developer System | Automação (RPA & IA)',
+        nav_about: 'Sobre',
+        nav_projects: 'Projetos',
+        nav_experience: 'Experiência',
+        nav_stack: 'Stack & Skills',
+        nav_contact: 'Contato',
+        nav_contact_cta: 'Entrar em Contato',
+        hero_badge: 'Disponível para projetos & oportunidades em TI • Goiânia, GO',
+        hero_greeting: 'Olá, eu sou',
+        hero_role: 'Auxiliar de TI & Developer System | Automação (RPA & IA) | TOTVS Protheus',
+        hero_desc: 'Transformo processos operacionais pesados em fluxos inteligentes e automatizados. Uno experiência prática em <strong class="text-dracula-fg font-semibold">infraestrutura de TI, ERP TOTVS Protheus</strong> e desenvolvimento de <strong class="text-dracula-fg font-semibold">automações com Python, RPA e Agentes de IA</strong> para gerar eficiência real.',
+        hero_btn_projects: 'Explorar Projetos',
+        hero_btn_copy: 'Copiar E-mail',
+        whatsapp_url: 'https://wa.me/5562996223286?text=Ol%C3%A1%20Eduardo!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.',
+        toast_copied: 'E-mail copiado: eduardohfr96@gmail.com',
+        toast_copy_err: 'Não foi possível copiar automaticamente.',
+        about_eyebrow: 'Sobre Mim',
+        about_title: 'Visão de negócios aliada à <span class="text-dracula-cyan">engenharia de automação</span>',
+        about_p1: 'Sou profissional de Tecnologia da Informação em Goiânia, com atuação voltada para <strong class="text-dracula-fg">suporte técnico, infraestrutura, automação de processos (RPA) e aplicação prática de Inteligência Artificial</strong> para ganho de produtividade.',
+        about_p2: 'Meu diferencial está em unir a base técnica de desenvolvimento (<strong class="text-dracula-fg">Python, JavaScript, Java, APIs REST e WordPress</strong>) com anos de vivência real em rotinas corporativas críticas dentro do <strong class="text-dracula-fg">ERP TOTVS Protheus (módulos SIGACOM e SIGAFIN)</strong>. Entendo o gargalo operacional na ponta e construo a solução técnica exata para eliminá-lo.',
+        about_p3: 'Atualmente curso <strong class="text-dracula-fg">Bacharelado em Sistemas de Informação (UNIFASAM)</strong> e especialização em <strong class="text-dracula-fg">Desenvolvimento Full Stack</strong>, mantendo inglês em nível avançado.',
+        about_card1_title: 'Automação & Agentes de IA',
+        about_card1_desc: 'Criação de fluxos RPA, chatbots inteligentes (Botpress / WhatsApp API) e scripts Python que reduzem horas de trabalho repetitivo.',
+        about_card2_title: 'Infraestrutura & Suporte TI',
+        about_card2_desc: 'Administração de estações de trabalho, redes, implantação Microsoft Office, manutenção preventiva/corretiva e suporte ágil aos usuários.',
+        about_card3_title: 'TOTVS Protheus & Dados',
+        about_card3_desc: 'Domínio de Compras (SIGACOM), Financeiro (SIGAFIN), validação fiscal e dashboards gerenciais automatizados com Python e openpyxl.',
+        projects_eyebrow: 'Portfólio & Soluções',
+        projects_title: 'Projetos em Destaque',
+        filter_all: 'Todos',
+        filter_ia: 'Automação & IA',
+        filter_web: 'Web & Full Stack',
+        filter_dados: 'Dados & ERP',
+        proj_cat_ia: 'Automação & IA',
+        proj_cat_web: 'Web & Full Stack',
+        proj_cat_dados: 'Dados & ERP',
+        proj_status_prod: 'Produção',
+        proj1_title: 'Jorge (CobraAPI) — Agente de Cobrança & Atendimento',
+        proj1_desc: 'Agente conversacional inteligente desenvolvido com Botpress e integrado diretamente à Meta WhatsApp Cloud API para disparo automatizado de lembretes de vencimento, negociação inicial e atendimento 24/7 com versionamento em GitHub.',
+        proj2_title: 'Reis Shoes — Plataforma Web & Companion App',
+        proj2_desc: 'Ecossistema web completo criado para lavanderia e restauração premium de tênis em Goiânia. Combina vitrine digital de conversão, agendamento de coleta/entrega e acompanhamento do status de higienização dos calçados.',
+        tag_ux: 'UX/UI Responsivo',
+        proj3_title: 'Automações RPA & Orquestração de Agentes de IA',
+        proj3_desc: 'Pipeline de automação de rotinas operacionais e administrativas conectando scripts Python, webhooks, n8n e modelos de IA via APIs REST — eliminando digitação manual e acelerando triagem de documentos.',
+        proj4_title: 'Dashboards Gerenciais & Automação de Dados (ERP)',
+        proj4_desc: 'Painéis executivos de KPIs de compras, suprimentos e financeiro alimentados por scripts automatizados em Python e openpyxl, consolidando relatórios extraídos do TOTVS Protheus sem retrabalho manual.',
+        tag_excel: 'Excel Avançado',
+        exp_eyebrow: 'Trajetória',
+        exp_title: 'Experiência Profissional',
+        exp0_role: 'Freelancer — Consultor de TI, Automação (RPA & IA) & Developer System',
+        exp0_date: '2026 – Atual',
+        exp0_company: 'Atuação Independente / ERRPA • Goiânia, GO',
+        exp0_li1: 'Desenvolvimento de automações de processos sob demanda (RPA, Python e n8n) para eliminação de tarefas manuais e ganho de escala.',
+        exp0_li2: 'Criação e integração de agentes de IA e chatbots via APIs REST (Botpress e Meta WhatsApp Cloud API).',
+        exp0_li3: 'Criação, personalização e manutenção de sites profissionais, institucionais e landing pages em WordPress, além de aplicações web responsivas.',
+        exp0_li4: 'Consultoria técnica, suporte de infraestrutura e otimização de fluxos administrativos e de ERP.',
+        tag_ai_agents: 'Agentes de IA',
+        exp1_role: 'Auxiliar de TI & Developer System',
+        exp1_date: 'Maio/2026 – Maio/2026',
+        exp1_li1: 'Desenvolvimento de automações de rotinas operacionais com RPA e IA, reduzindo atividades manuais da equipe.',
+        exp1_li2: 'Suporte técnico à infraestrutura de TI, administração de estações de trabalho e redes.',
+        exp1_li3: 'Implantação, configuração e suporte avançado ao pacote Microsoft Office e ferramentas jurídicas.',
+        exp1_li4: 'Formatação, manutenção preventiva/corretiva de hardware e resolução de incidentes de software.',
+        exp2_role: 'Comprador Sênior / Supervisor de Compras',
+        exp2_date: 'Março/2023 – Maio/2026',
+        exp2_li1: 'Amplo domínio do ERP TOTVS Protheus, atuando de forma integrada nos módulos de Compras (SIGACOM) e Financeiro (SIGAFIN).',
+        exp2_li2: 'Lançamento, monitoramento e validação fiscal de notas fiscais (monitor de NF-e), contas a pagar e a receber.',
+        exp2_li3: 'Criação de formulários e relatórios gerenciais para controle de suprimentos, peças e logística de entrega.',
+        exp3_role: 'Recepcionista & Suporte Administrativo',
+        exp3_date: 'Agosto/2021 – Agosto/2022',
+        exp3_desc: 'Atendimento ao público, organização de agendas, triagem de demandas e suporte às rotinas administrativas e sistemas internos.',
+        edu_eyebrow: 'Educação',
+        edu_title: 'Formação & Idiomas',
+        edu1_badge: 'Graduação • Cursando',
+        edu1_title: 'Bacharelado em Sistemas de Informação',
+        edu2_badge: 'Especialização • Cursando',
+        edu2_title: 'Formação Desenvolvedor Full Stack',
+        edu2_desc: 'Desenvolvimento Front-end, Back-end, APIs REST e Bancos de Dados',
+        edu3_badge: 'Idiomas • Avançado',
+        edu3_title: 'Inglês — YouBecome Idiomas',
+        edu3_desc: 'Leitura técnica de documentações, comunicação e conversação avançada (Português Nativo)',
+        stack_eyebrow: 'Arsenal Técnico',
+        stack_title: 'Stack & Competências',
+        stack_desc: 'Ferramentas e tecnologias que utilizo no dia a dia para automatizar processos, dar suporte à infraestrutura e desenvolver aplicações.',
+        stack_card1_title: 'Automação & IA',
+        stack_card2_title: 'Desenvolvimento',
+        stack_card3_title: 'ERP & Infraestrutura',
+        tag_support: 'Suporte Técnico N1/N2',
+        tag_infra: 'Infraestrutura TI',
+        tag_office: 'Excel & Office Avançado',
+        contact_eyebrow: '06. Vamos conversar',
+        contact_title: 'Pronto para automatizar processos ou somar no seu time de TI?',
+        contact_desc: 'Estou aberto a oportunidades como Auxiliar de TI, Developer System, Especialista em Automação/RPA, Consultor TOTVS Protheus e projetos sob medida.',
+        contact_whatsapp: 'Chamar no WhatsApp',
+        contact_copy: 'Copiar',
+        terminal_html: `<code>{
+  <span class="text-dracula-cyan">"nome"</span>: <span class="text-dracula-green">"Eduardo Henrique F. dos Reis"</span>,
+  <span class="text-dracula-cyan">"localizacao"</span>: <span class="text-dracula-green">"Goiânia, GO - Brasil"</span>,
+  <span class="text-dracula-cyan">"foco_principal"</span>: [
+    <span class="text-dracula-orange">"Automação de Processos (RPA & IA)"</span>,
+    <span class="text-dracula-orange">"Suporte & Infraestrutura de TI"</span>,
+    <span class="text-dracula-orange">"ERP TOTVS Protheus (SIGACOM/SIGAFIN)"</span>,
+    <span class="text-dracula-orange">"Desenvolvimento Web & WordPress"</span>
+  ],
+  <span class="text-dracula-cyan">"stack"</span>: [<span class="text-dracula-pink">"Python"</span>, <span class="text-dracula-pink">"JS"</span>, <span class="text-dracula-pink">"n8n"</span>, <span class="text-dracula-pink">"Botpress"</span>, <span class="text-dracula-pink">"APIs REST"</span>],
+  <span class="text-dracula-cyan">"formacao"</span>: <span class="text-dracula-green">"Sistemas de Informação (UNIFASAM)"</span>,
+  <span class="text-dracula-cyan">"ingles"</span>: <span class="text-dracula-purple">"Avançado"</span>
+}</code>`
+      },
+      en: {
+        page_title: 'Eduardo Reis | IT Assistant & Systems Developer | Automation (RPA & AI)',
+        nav_about: 'About',
+        nav_projects: 'Projects',
+        nav_experience: 'Experience',
+        nav_stack: 'Stack & Skills',
+        nav_contact: 'Contact',
+        nav_contact_cta: 'Get in Touch',
+        hero_badge: 'Available for IT projects & opportunities • Goiânia, Brazil',
+        hero_greeting: 'Hi, I am',
+        hero_role: 'IT Assistant & Systems Developer | Automation (RPA & AI) | TOTVS Protheus',
+        hero_desc: 'I transform heavy operational workflows into smart, automated systems. Combining hands-on experience in <strong class="text-dracula-fg font-semibold">IT infrastructure, TOTVS Protheus ERP</strong>, and building <strong class="text-dracula-fg font-semibold">Python automations, RPA, and AI Agents</strong> to drive real efficiency.',
+        hero_btn_projects: 'Explore Projects',
+        hero_btn_copy: 'Copy Email',
+        whatsapp_url: 'https://wa.me/5562996223286?text=Hi%20Eduardo!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.',
+        toast_copied: 'Email copied: eduardohfr96@gmail.com',
+        toast_copy_err: 'Could not copy automatically.',
+        about_eyebrow: 'About Me',
+        about_title: 'Business insight combined with <span class="text-dracula-cyan">automation engineering</span>',
+        about_p1: 'I am an Information Technology professional based in Goiânia, Brazil, focused on <strong class="text-dracula-fg">technical support, IT infrastructure, Robotic Process Automation (RPA), and practical Artificial Intelligence</strong> to boost productivity.',
+        about_p2: 'My edge comes from pairing software development skills (<strong class="text-dracula-fg">Python, JavaScript, Java, REST APIs, and WordPress</strong>) with years of real-world experience in critical corporate routines inside <strong class="text-dracula-fg">TOTVS Protheus ERP (SIGACOM & SIGAFIN modules)</strong>. I understand operational bottlenecks firsthand and engineer the exact technical solution to eliminate them.',
+        about_p3: 'I am currently pursuing a <strong class="text-dracula-fg">B.S. in Information Systems (UNIFASAM)</strong> and a specialization in <strong class="text-dracula-fg">Full Stack Development</strong>, with advanced English proficiency.',
+        about_card1_title: 'Automation & AI Agents',
+        about_card1_desc: 'Building RPA workflows, intelligent chatbots (Botpress / WhatsApp API), and Python scripts that save hours of repetitive work.',
+        about_card2_title: 'IT Infrastructure & Support',
+        about_card2_desc: 'Workstation administration, networking, Microsoft Office deployment, preventive/corrective hardware maintenance, and agile user support.',
+        about_card3_title: 'TOTVS Protheus & Data',
+        about_card3_desc: 'Hands-on mastery of Procurement (SIGACOM), Finance (SIGAFIN), tax validation, and automated management dashboards with Python & openpyxl.',
+        projects_eyebrow: 'Portfolio & Solutions',
+        projects_title: 'Featured Projects',
+        filter_all: 'All',
+        filter_ia: 'Automation & AI',
+        filter_web: 'Web & Full Stack',
+        filter_dados: 'Data & ERP',
+        proj_cat_ia: 'Automation & AI',
+        proj_cat_web: 'Web & Full Stack',
+        proj_cat_dados: 'Data & ERP',
+        proj_status_prod: 'Production',
+        proj1_title: 'Jorge (CobraAPI) — Automated Billing & Support Agent',
+        proj1_desc: 'Intelligent conversational agent built with Botpress and integrated directly with Meta WhatsApp Cloud API for automated due-date reminders, initial payment negotiation, and 24/7 customer support versioned on GitHub.',
+        proj2_title: 'Reis Shoes — Web Platform & Companion App',
+        proj2_desc: 'Complete web ecosystem built for a premium sneaker cleaning and restoration service in Goiânia. Combines a high-converting digital storefront, pickup/delivery scheduling, and real-time service status tracking.',
+        tag_ux: 'Responsive UX/UI',
+        proj3_title: 'RPA Pipelines & AI Agent Orchestration',
+        proj3_desc: 'Operational and administrative automation pipelines connecting Python scripts, webhooks, n8n, and AI models via REST APIs — eliminating manual data entry and accelerating document triage.',
+        proj4_title: 'Management Dashboards & ERP Data Automation',
+        proj4_desc: 'Executive KPI dashboards for procurement, supply chain, and finance powered by automated Python and openpyxl scripts, consolidating reports extracted from TOTVS Protheus without manual rework.',
+        tag_excel: 'Advanced Excel',
+        exp_eyebrow: 'Career Path',
+        exp_title: 'Work Experience',
+        exp0_role: 'Freelancer — IT Consultant, Automation (RPA & AI) & Systems Developer',
+        exp0_date: '2026 – Present',
+        exp0_company: 'Independent Consulting / ERRPA • Goiânia, Brazil',
+        exp0_li1: 'Custom process automation development (RPA, Python, and n8n) to eliminate manual tasks and scale operations.',
+        exp0_li2: 'Design and integration of AI agents and chatbots via REST APIs (Botpress and Meta WhatsApp Cloud API).',
+        exp0_li3: 'Creation, customization, and maintenance of corporate websites and landing pages in WordPress, alongside responsive web apps.',
+        exp0_li4: 'Technical consulting, IT infrastructure support, and optimization of administrative and ERP workflows.',
+        tag_ai_agents: 'AI Agents',
+        exp1_role: 'IT Assistant & Systems Developer',
+        exp1_date: 'May 2026 – May 2026',
+        exp1_li1: 'Developed operational workflow automations using RPA and AI, reducing repetitive manual tasks across the team.',
+        exp1_li2: 'Provided technical support for IT infrastructure, workstation administration, and local networks.',
+        exp1_li3: 'Deployed, configured, and delivered advanced support for Microsoft Office suite and legal software tools.',
+        exp1_li4: 'Performed system imaging, preventive/corrective hardware maintenance, and software incident resolution.',
+        exp2_role: 'Senior Buyer / Procurement Supervisor',
+        exp2_date: 'March 2023 – May 2026',
+        exp2_li1: 'Extensive expertise in TOTVS Protheus ERP, working cross-functionally across Procurement (SIGACOM) and Finance (SIGAFIN) modules.',
+        exp2_li2: 'Invoice entry, monitoring, and tax validation (NF-e monitor), accounts payable, and accounts receivable.',
+        exp2_li3: 'Designed management forms and analytical reports to track supplies, parts, and delivery logistics.',
+        exp3_role: 'Receptionist & Administrative Support',
+        exp3_date: 'August 2021 – August 2022',
+        exp3_desc: 'Customer service, schedule management, request triage, and support for administrative routines and internal systems.',
+        edu_eyebrow: 'Education',
+        edu_title: 'Education & Languages',
+        edu1_badge: "Bachelor's • In Progress",
+        edu1_title: 'B.S. in Information Systems',
+        edu2_badge: 'Specialization • In Progress',
+        edu2_title: 'Full Stack Developer Program',
+        edu2_desc: 'Front-end, Back-end, REST APIs, and Relational Databases',
+        edu3_badge: 'Languages • Advanced',
+        edu3_title: 'English — YouBecome Language School',
+        edu3_desc: 'Technical documentation reading, professional communication, and advanced conversation (Native Portuguese)',
+        stack_eyebrow: 'Tech Arsenal',
+        stack_title: 'Stack & Competencies',
+        stack_desc: 'Tools and technologies I use daily to automate workflows, support IT infrastructure, and build web applications.',
+        stack_card1_title: 'Automation & AI',
+        stack_card2_title: 'Development',
+        stack_card3_title: 'ERP & Infrastructure',
+        tag_support: 'N1/N2 Tech Support',
+        tag_infra: 'IT Infrastructure',
+        tag_office: 'Advanced Excel & Office',
+        contact_eyebrow: '06. Let’s talk',
+        contact_title: 'Ready to automate workflows or strengthen your IT team?',
+        contact_desc: 'Open to opportunities as IT Assistant, Systems Developer, RPA/Automation Specialist, TOTVS Protheus Consultant, and custom freelance projects.',
+        contact_whatsapp: 'Chat on WhatsApp',
+        contact_copy: 'Copy',
+        terminal_html: `<code>{
+  <span class="text-dracula-cyan">"name"</span>: <span class="text-dracula-green">"Eduardo Henrique F. dos Reis"</span>,
+  <span class="text-dracula-cyan">"location"</span>: <span class="text-dracula-green">"Goiânia, GO - Brazil"</span>,
+  <span class="text-dracula-cyan">"core_focus"</span>: [
+    <span class="text-dracula-orange">"Process Automation (RPA & AI)"</span>,
+    <span class="text-dracula-orange">"IT Support & Infrastructure"</span>,
+    <span class="text-dracula-orange">"TOTVS Protheus ERP (SIGACOM/SIGAFIN)"</span>,
+    <span class="text-dracula-orange">"Web Development & WordPress"</span>
+  ],
+  <span class="text-dracula-cyan">"stack"</span>: [<span class="text-dracula-pink">"Python"</span>, <span class="text-dracula-pink">"JS"</span>, <span class="text-dracula-pink">"n8n"</span>, <span class="text-dracula-pink">"Botpress"</span>, <span class="text-dracula-pink">"REST APIs"</span>],
+  <span class="text-dracula-cyan">"education"</span>: <span class="text-dracula-green">"Information Systems (UNIFASAM)"</span>,
+  <span class="text-dracula-cyan">"english"</span>: <span class="text-dracula-purple">"Advanced"</span>
+}</code>`
+      }
+    };
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      const dict = translations[lang];
+      if (!dict) return;
+
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+      document.title = dict.page_title;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+
+      const terminalEl = document.getElementById('terminal-json');
+      if (terminalEl && dict.terminal_html) {
+        terminalEl.innerHTML = dict.terminal_html;
+      }
+
+      const waHero = document.getElementById('whatsapp-hero-btn');
+      const waContact = document.getElementById('whatsapp-contact-btn');
+      if (waHero) waHero.href = dict.whatsapp_url;
+      if (waContact) waContact.href = dict.whatsapp_url;
+
+      const desktopLabel = document.getElementById('lang-label-desktop');
+      const mobileLabel = document.getElementById('lang-label-mobile');
+      if (lang === 'pt') {
+        if (desktopLabel) desktopLabel.innerHTML = '<span class="text-dracula-green">PT</span> <span class="text-dracula-border">|</span> <span class="text-dracula-muted">EN</span>';
+        if (mobileLabel) mobileLabel.innerHTML = '<span class="text-dracula-green">PT</span>|<span class="text-dracula-muted">EN</span>';
+      } else {
+        if (desktopLabel) desktopLabel.innerHTML = '<span class="text-dracula-muted">PT</span> <span class="text-dracula-border">|</span> <span class="text-dracula-green">EN</span>';
+        if (mobileLabel) mobileLabel.innerHTML = '<span class="text-dracula-muted">PT</span>|<span class="text-dracula-green">EN</span>';
+      }
+
+      try {
+        localStorage.setItem('portfolio_lang', lang);
+      } catch (e) {}
+    }
+
+    function toggleLanguage() {
+      const nextLang = currentLang === 'pt' ? 'en' : 'pt';
+      applyLanguage(nextLang);
+    }
+
+    function copyEmail() {
+      const dict = translations[currentLang] || translations.pt;
+      copyText('eduardohfr96@gmail.com', dict.toast_copied);
+    }
+
     function copyText(text, message) {
+      const dict = translations[currentLang] || translations.pt;
       const textArea = document.createElement('textarea');
       textArea.value = text;
       textArea.style.position = 'fixed';
@@ -732,10 +1390,18 @@
         document.execCommand('copy');
         showToast(message);
       } catch (err) {
-        showToast('Não foi possível copiar automaticamente.');
+        showToast(dict.toast_copy_err);
       }
       document.body.removeChild(textArea);
     }
+
+    // Initialize saved language preference
+    try {
+      const savedLang = localStorage.getItem('portfolio_lang');
+      if (savedLang === 'en' || savedLang === 'pt') {
+        applyLanguage(savedLang);
+      }
+    } catch (e) {}
 
     function showToast(message) {
       const toast = document.getElementById('toast');
